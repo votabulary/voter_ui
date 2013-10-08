@@ -1,5 +1,60 @@
-<p>This is the partial for view 2.</p>
-<p>
-  Showing of 'interpolate' filter:
-  {{ 'Current version is v%VERSION%.' | interpolate }}
-</p>
+<div class="container-fluid container" id="submit">
+    <div class="formintro">
+        <div class="logo"><img src="../../images/logo.png" /></div>
+        <h1>Sign up</h1>
+        <p>Already have an account? <a href="#">Log in here</a>
+    </div>
+    <form>
+        <fieldset>
+            <label>Email:</label> 
+            <div class="controls">
+                <input type="text" name="email">
+            </div>
+        </fieldset>
+        <fieldset>
+            <label>Password:</label> 
+            <div class="controls">
+                <input type="text" name="password">
+            </div>
+        </fieldset>
+        <fieldset>
+            <label>Your state:</label> 
+            <div class="controls">
+                <span class="prefilled">Texas</span>
+            </div>
+        </fieldset>
+        <fieldset>
+            <label>Your county:</label> 
+            <div class="controls">
+                <select name="county">
+                    <option value="travis">Travis</option>
+                </select>
+            </div>
+        </fieldset>
+        <fieldset>
+            <label>Your precinct:</label> 
+            <div class="controls">
+                <select name="precinct">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                </select>
+            </div>
+            <sub class="controls">
+                Not sure what precinct you are in? Find out on your county's <a href="#" target="_blank">website</a>.
+            </sub>
+        </fieldset>
+        <fieldset>
+            <label>How do you want to be notified?</label> 
+            <div class="controls">
+                 <div class="checkboxcontainer">
+                     <input type="checkbox" name="notification" value="email"><span class="value">Email</span>
+                </div>
+                <div class="checkboxcontainer">
+                     <input type="checkbox" name="notification" value="email"><span class="value">Text message</span>
+                </div>
+            </div>
+        </fieldset>
+         <input type="submit" value="Submit" class="btn btn-primary btn-large">
+
+    </form>
+</div>
