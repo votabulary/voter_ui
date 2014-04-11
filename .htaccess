@@ -1,0 +1,9 @@
+RewriteEngine on
+RewriteBase /
+
+RewriteCond %{REQUEST_URI} !^/dist/
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^(.*)$ /dist/$1 [L]
