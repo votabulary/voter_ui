@@ -18,9 +18,9 @@ if(isset($_POST['email'])) {
  
         // your error code can go here
  
-        echo "We are very sorry, but there were error(s) found with the form you submitted. ";
+        echo "<!DOCTYPE html><html lang='en'><head><meta http-equiv='content-type' content='text/html; charset=UTF-8'><meta charset='utf-8'><meta http-equiv='X-UA-Compatible' content='IE=edge'><meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content=''><meta name='author' content=''><link rel='shortcut icon' href='imgs/favicon.ico'><title>votabulary</title><link href='css/bootstrap.css' rel='stylesheet'><link href='css/navbar-static-top.css' rel='stylesheet'></head><body><div class='navbar navbar-inverse navbar-fixed-top' role='navigation'><div class='container'><div class='navbar-header'><button type='button' class='navbar-toggle' data-toggle='collapse' data-target='.navbar-collapse'><span class='sr-only'>Toggle navigation</span><span class='icon-bar'></span><span class='icon-bar'></span><span class='icon-bar'></span></button><a class='navbar-brand' href='index.html'><span data-icon='a' class='icon'></span><img src='imgs/text-white.svg'></a></div> <div class='navbar-collapse collapse'><ul class='nav navbar-nav'><li><a href='index.html'>Home</a></li><li><a href='upcoming.html'>Upcoming elections</a></li><li><a href='about.html'>About</a></li><li><a href='faq.html'>Voting FAQ</a></li></ul><ul class='nav navbar-nav navbar-right'><li><a href='login.html'>Log in</a></li></ul></div></div></div><div class='container-fluid container'><div class='col-md-8 col-md-offset-2'><div class='formintro'><h1>Sign up</h1></div><form action='http://localhost:8080/voter/create' method='post'>Oops, looks like the form has some errors: ";
  
-        echo "These errors appear below.<br /><br />";
+        echo "<br /><br />";
  
         echo $error."<br /><br />";
  
