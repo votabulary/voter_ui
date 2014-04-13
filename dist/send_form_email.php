@@ -94,9 +94,9 @@ if(isset($_POST['email'])) {
  
   }
  
-  if(strlen($alphacode) < 6) {
+  if(strlen($alphacode) < 2) {
  
-    $error_message .= 'The alpha code you entered do not appear to be valid.<br />';
+    $error_message .= 'The Alpha Code you entered does not appear to be valid.<br />';
  
   }
  
