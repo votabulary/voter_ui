@@ -309,6 +309,10 @@ a {
   color: #428bca;
   text-decoration: none;
 }
+a.anchor, a.anchor:hover {
+    color: #333;
+    text-decoration: none;
+}
 a:hover,
 a:focus {
   color: #2a6496;
@@ -3603,6 +3607,9 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .margin-bottom-20 {
     margin-bottom: 20px;
+}
+.navbar-right, #upcomingnav {
+  display: none;
 }
 @media (min-width: 768px) {
   .nav-tabs.nav-justified > li {

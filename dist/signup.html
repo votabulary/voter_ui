@@ -43,9 +43,9 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
 	        <li><a href="index.html">Home</a></li>
-            <li><a href="upcoming.html">Upcoming elections</a></li>
+            <li id="upcomingnav"><a href="upcoming.html">Upcoming elections</a></li>
             <li><a href="about.html">About</a></li>
-            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="faq.html">Voting FAQ</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><a href="login.html">Log in</a></li>
@@ -59,21 +59,33 @@
 		<div class="col-md-8 col-md-offset-2">
 	    <div class="formintro">
 	        <h1>Sign up</h1>
-	        <p class="help-block">Already have an account? <a href="login.html">Login here</a></p>
+            <!-- <p class="help-block">Already have an account? <a href="login.html">Login here</a></p> -->
 	    </div>
-	    <form action="http://localhost:8080/voter/create" method="post">
+	    <form action="send_form_email.php" method="post" name="contactform">
+	        <fieldset class="form-group">
+	            <label class="control-label">First Name <span class="glyphicon glyphicon-asterisk"></span></label> 
+	            <div class="controls">
+	                <input type="text" name="first_name" class="form-control input-lg" placeholder="Enter first name">
+	            </div>
+	        </fieldset>
+	        <fieldset class="form-group">
+	            <label class="control-label">Last Name <span class="glyphicon glyphicon-asterisk"></span></label> 
+	            <div class="controls">
+	                <input type="text" name="last_name" class="form-control input-lg" placeholder="Enter last name">
+	            </div>
+	        </fieldset>
 	        <fieldset class="form-group">
 	            <label class="control-label">Email <span class="glyphicon glyphicon-asterisk"></span></label> 
 	            <div class="controls">
 	                <input type="text" name="email" class="form-control input-lg" placeholder="Enter email">
 	            </div>
 	        </fieldset>
-	        <fieldset class="form-group">
-	            <label class="control-label">Password <span class="glyphicon glyphicon-asterisk"></span></label> 
-	            <div class="controls">
-	                <input type="text" name="password"class="form-control input-lg" placeholder="Password">
-	            </div>
-	        </fieldset>
+            <!-- <fieldset class="form-group">
+                <label class="control-label">Password <span class="glyphicon glyphicon-asterisk"></span></label> 
+                <div class="controls">
+                    <input type="text" name="password"class="form-control input-lg" placeholder="Password">
+                </div>
+            </fieldset> -->
 	        <fieldset class="form-group">
 	            <label class="control-label">Your state</label> 
 	            <div class="controls">
@@ -90,10 +102,7 @@
 	        <fieldset class="form-group">
 	            <label class="control-label">Your precinct</label> 
 	            <div class="controls">
-	                <select name="precinct" class="form-control input-lg">
-	                    <option value="1">1</option>
-	                    <option value="2">2</option>
-	                </select>
+	                <input type="text" name="precinct" class="form-control input-lg" placeholder="Enter precinct">
 	            </div>
 	            <p class="help-block">
 	                Not sure what precinct you are in? Find out on your county's <a href="http://www.traviscountytax.org/gis/maps/0.htm" target="_blank">website</a>.
@@ -119,6 +128,12 @@
 		        </div>
 				</div>
 
+	        </fieldset>
+	        <fieldset class="form-group">
+	            <label class="control-label">Alpha code <span class="glyphicon glyphicon-asterisk"></span></label> 
+	            <div class="controls">
+	                <input type="text" name="alphacode" class="form-control input-lg" placeholder="Enter Alpha Code">
+	            </div>
 	        </fieldset>
 			<div class="form-group">
 		         <input type="submit" value="Submit" class="btn btn-primary btn-lg btn-block">
