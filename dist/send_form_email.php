@@ -145,6 +145,12 @@ $headers = 'From: '.$email_from."\r\n".
 'Reply-To: '.$email_from."\r\n" .
  
 'X-Mailer: PHP/' . phpversion();
+
+ini_set("SMTP", "smtp.mandrillapp.com");
+ini_set("smtp_port", "587");
+ini_set("user_name", "app18814430@heroku.com");
+ini_set("password ", "P3eKbD7xFBoKL-tb7IQf7g");
+ini_set("domain", "heroku.com");
  
 @mail($email_to, $email_subject, $email_message, $headers); 
  
