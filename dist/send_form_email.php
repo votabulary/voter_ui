@@ -140,20 +140,52 @@ if(isset($_POST['email'])) {
  
 // create email headers
  
-$headers = 'From: '.$email_from."\r\n".
- 
-'Reply-To: '.$email_from."\r\n" .
- 
-'X-Mailer: PHP/' . phpversion();
+//$headers = 'From: '.$email_from."\r\n".
+// 
+//'Reply-To: '.$email_from."\r\n" .
+// 
+//'X-Mailer: PHP/' . phpversion();
+//
+//ini_set("SMTP", "smtp.mandrillapp.com");
+//ini_set("smtp_port", "587");
+//ini_set("user_name", "app18814430@heroku.com");
+//ini_set("password ", "P3eKbD7xFBoKL-tb7IQf7g");
+//ini_set("domain", "heroku.com");
+// 
+//@mail($email_to, $email_subject, $email_message, $headers); 
 
-ini_set("SMTP", "smtp.mandrillapp.com");
-ini_set("smtp_port", "587");
-ini_set("user_name", "app18814430@heroku.com");
-ini_set("password ", "P3eKbD7xFBoKL-tb7IQf7g");
-ini_set("domain", "heroku.com");
+// config -- move up to if this works
+$email_to_name = "Doug Wick";
+
+// some variable work...
+$email_from_name = clean_string($first_name)." ".clean_string($last_name);
+
+// mailer magic
+require 'PHPMailerAutoload.php'
+$mail = new PHPMailer;
+
+$mail->isSMTP();
+$mail->Host = 'smtp.mandrillapp.com';
+$mail->SMTPAuth = true;
+$mail->Username = 'app18814430@heroku.com';
+$mail->Password = 'P3eKbD7xFBoKL-tb7IQf7g';
+
+$mail->From = $email_from;
+$mail->FromName = $email_from_name;
+$mail->addAddress($email_to, $email_to_name);
+$mail->addReplyTo($email_from, $email_from_name);
+
+$mail->Subject = $email_subject;
+$mail->Body    = $email_message;
+
+if(!$mail->send()) {
+   echo 'Message could not be sent.';
+   echo 'Mailer Error: ' . $mail->ErrorInfo;
+   exit;
+}
  
-@mail($email_to, $email_subject, $email_message, $headers); 
- 
+echo 'Message has been sent';
+
 ?>
  
  
